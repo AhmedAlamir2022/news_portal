@@ -13,18 +13,18 @@
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
-            <li class="active">
-                <a href="{{ route('admin.dashboard') }}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
+            <li  class="{{ setSidebarActive(['admin.dashboard']) }}">
+                <a class="nav-link" href="{{ route('admin.dashboard') }}"><i
+                        class="fas fa-fire"></i><span>Dashboard</span></a>
             </li>
             <li class="menu-header">Starter</li>
 
-            {{-- @if (canAccess(['category index', 'category create', 'category udpate', 'category delete']))
-                <li class="{{ setSidebarActive(['admin.category.*']) }}"><a class="nav-link"
-                        href="{{ route('admin.category.index') }}"><i class="fas fa-list"></i>
-                        <span>{{ __('admin.Category') }}</span></a></li>
-            @endif
+            <li class="{{ setSidebarActive(['admin.category.*']) }}"><a class="nav-link"
+                    href="{{ route('admin.category.index') }}"><i class="fas fa-list"></i>
+                    <span>Categories</span></a></li>
 
-            @if (canAccess(['news index']))
+
+            {{-- @if (canAccess(['news index']))
                 <li class="dropdown {{ setSidebarActive(['admin.news.*', 'admin.pending.news']) }}">
                     <a href="#" class="nav-link has-dropdown"><i class="fas fa-newspaper"></i>
                         <span>{{ __('admin.News') }}</span></a>
