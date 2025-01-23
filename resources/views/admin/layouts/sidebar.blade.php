@@ -13,7 +13,7 @@
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
-            <li  class="{{ setSidebarActive(['admin.dashboard']) }}">
+            <li class="{{ setSidebarActive(['admin.dashboard']) }}">
                 <a class="nav-link" href="{{ route('admin.dashboard') }}"><i
                         class="fas fa-fire"></i><span>Dashboard</span></a>
             </li>
@@ -24,22 +24,22 @@
                     <span>Categories</span></a></li>
 
 
-            {{-- @if (canAccess(['news index']))
-                <li class="dropdown {{ setSidebarActive(['admin.news.*', 'admin.pending.news']) }}">
-                    <a href="#" class="nav-link has-dropdown"><i class="fas fa-newspaper"></i>
-                        <span>{{ __('admin.News') }}</span></a>
-                    <ul class="dropdown-menu">
-                        <li class="{{ setSidebarActive(['admin.news.*']) }}"><a class="nav-link"
-                                href="{{ route('admin.news.index') }}">{{ __('admin.All News') }}</a></li>
 
-                        <li class="{{ setSidebarActive(['admin.pending.news']) }}"><a class="nav-link"
-                                href="{{ route('admin.pending.news') }}">{{ __('admin.Pending News') }}</a></li>
+            <li class="dropdown {{ setSidebarActive(['admin.news.*', 'admin.pending.news']) }}">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-newspaper"></i>
+                    <span>News</span></a>
+                <ul class="dropdown-menu">
+                    <li class="{{ setSidebarActive(['admin.news.*']) }}"><a class="nav-link"
+                            href="{{ route('admin.news.index') }}">All News</a></li>
 
-                    </ul>
-                </li>
-            @endif
+                    <li class="{{ setSidebarActive(['admin.pending.news']) }}"><a class="nav-link"
+                            href="{{ route('admin.pending.news') }}">Pending News</a></li>
 
-            @if (canAccess(['about index', 'contact index']))
+                </ul>
+            </li>
+
+
+            {{-- @if (canAccess(['about index', 'contact index']))
                 <li class="dropdown {{ setSidebarActive(['admin.about.*', 'admin.contact.*']) }}">
                     <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i>
                         <span>{{ __('admin.Pages') }}</span></a>

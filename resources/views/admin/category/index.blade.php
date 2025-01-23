@@ -5,7 +5,6 @@
         <div class="section-header">
             <h1>Categories</h1>
         </div>
-
         <div class="card card-primary">
             <div class="card-header">
                 <h4>All Categories</h4>
@@ -15,9 +14,7 @@
                     </a>
                 </div>
             </div>
-
             <div class="card-body">
-
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
