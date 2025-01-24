@@ -150,7 +150,7 @@ class NewsController extends Controller
             $tagIds[] = $item->id;
         }
         $news->tags()->attach($tagIds);
-        return redirect()->route('admin.news.index')->with('info', 'Updated Successfull');
+        return redirect()->route('admin.news.index')->with('info', 'Updated Successfull'); 
     }
 
     /**
