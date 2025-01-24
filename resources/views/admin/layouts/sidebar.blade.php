@@ -69,52 +69,54 @@
                 <li class="{{ setSidebarActive(['admin.home-section-setting.*']) }}"><a class="nav-link"
                         href="{{ route('admin.home-section-setting.index') }}"><i class="fas fa-wrench"></i>
                         <span>{{ __('admin.Home Section Setting') }}</span></a></li>
-            @endif
+            @endif --}}
 
-            @if (canAccess(['advertisement index']))
+
                 <li class="{{ setSidebarActive(['admin.ad.*']) }}"><a class="nav-link"
-                        href="{{ route('admin.ad.index') }}"><i class="fas fa-ad"></i>
-                        <span>{{ __('admin.Advertisement') }}</span></a></li>
-            @endif
+                        href="{{ route('admin.advertisement.index') }}"><i class="fas fa-ad"></i>
+                        <span>Advertisement</span></a></li>
 
 
-            @if (canAccess(['subscribers index']))
+
+        {{--    @if (canAccess(['subscribers index']))
                 <li class="{{ setSidebarActive(['admin.subscribers.*']) }}"><a class="nav-link"
                         href="{{ route('admin.subscribers.index') }}"><i class="fas fa-users"></i>
                         <span>{{ __('admin.Subscribers') }}</span></a></li>
-            @endif
+            @endif --}}
 
-            @if (canAccess(['footer index']))
-                <li
-                    class="dropdown
+
+            <li
+                class="dropdown
                 {{ setSidebarActive([
                     'admin.social-link.*',
                     'admin.footer-info.*',
                     'admin.footer-grid-one.*',
                     'admin.footer-grid-three.*',
-                    'admin.footer-grid-two.*'
+                    'admin.footer-grid-two.*',
                 ]) }}
             ">
-                    <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i>
-                        <span>{{ __('admin.Footer') }} {{ __('admin.Setting') }}</span></a>
-                    <ul class="dropdown-menu">
-                        <li class="{{ setSidebarActive(['admin.social-link.*']) }}"><a class="nav-link"
-                                href="{{ route('admin.social-link.index') }}">{{ __('admin.Social Links') }}</a></li>
-                        <li class="{{ setSidebarActive(['admin.footer-info.*']) }}"><a class="nav-link"
-                                href="{{ route('admin.footer-info.index') }}">{{ __('admin.Footer Info') }}</a></li>
-                        <li class="{{ setSidebarActive(['admin.footer-grid-one.*']) }}"><a class="nav-link"
-                                href="{{ route('admin.footer-grid-one.index') }}">{{ __('admin.Footer Grid One') }}</a></li>
-                        <li class="{{ setSidebarActive(['admin.footer-grid-two.*']) }}"><a class="nav-link"
-                                href="{{ route('admin.footer-grid-two.index') }}">{{ __('admin.Footer Grid Two') }}</a></li>
-                        <li class="{{ setSidebarActive(['admin.footer-grid-three.*']) }}"><a class="nav-link"
-                                href="{{ route('admin.footer-grid-three.index') }}">{{ __('admin.Footer Grid Three') }}</a>
-                        </li>
+                <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i>
+                    <span>Footer Setting</span></a>
+                <ul class="dropdown-menu">
+                    <li class="{{ setSidebarActive(['admin.social-link.*']) }}"><a class="nav-link"
+                            href="{{ route('admin.social-link.index') }}">Social Links</a></li>
+                    <li class="{{ setSidebarActive(['admin.footer-info.*']) }}"><a class="nav-link"
+                            href="{{ route('admin.footer-info.index') }}">Footer Info</a></li>
+                    <li class="{{ setSidebarActive(['admin.footer-grid-one.*']) }}"><a class="nav-link"
+                            href="{{ route('admin.footer-grid-one.index') }}">Footer Grid One</a>
+                    </li>
+                    <li class="{{ setSidebarActive(['admin.footer-grid-two.*']) }}"><a class="nav-link"
+                            href="{{ route('admin.footer-grid-two.index') }}">Footer Grid Two</a>
+                    </li>
+                    <li class="{{ setSidebarActive(['admin.footer-grid-three.*']) }}"><a class="nav-link"
+                            href="{{ route('admin.footer-grid-three.index') }}">Footer Grid Three</a>
+                    </li>
 
-                    </ul>
-                </li>
-            @endif
+                </ul>
+            </li>
 
-            @if (canAccess(['access management index']))
+
+            {{-- @if (canAccess(['access management index']))
                 <li class="dropdown
                 {{ setSidebarActive([
                     'admin.role.*',
