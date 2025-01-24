@@ -18,24 +18,34 @@ class AdvertisementController extends Controller
      */
     public function index()
     {
-        $advertisement = Advertisement::first();
-        return view('admin.ad.index', compact('ad'));
+        $ad = Advertisement::first();
+        return view('admin.advertisement.index', compact('ad'));
     }
-
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(AdminAdUpdateRequest $request, string $id)
+    public function update(Request $request, string $id)
     {
+        $request->validate([
+            'home_top_bar_ad' => ['nullable', 'image', 'max:3000'],
+            'home_middle_ad' => ['nullable', 'image', 'max:3000'],
+            'view_page_ad' => ['nullable', 'image', 'max:3000'],
+            'news_page_ad' => ['nullable', 'image', 'max:3000'],
+            'side_bar_ad' => ['nullable', 'image', 'max:3000'],
+            'home_top_bar_ad_url' => ['nullable', 'url'],
+            'home_middle_ad_url' => ['nullable', 'url'],
+            'view_page_ad_url' => ['nullable', 'url'],
+            'news_page_ad_url' => ['nullable', 'url'],
+            'side_bar_ad_url' => ['nullable', 'url'],
+        ]);
         $home_top_bar_ad = $this->handleFileUpload($request, 'home_top_bar_ad');
         $home_middle_ad = $this->handleFileUpload($request, 'home_middle_ad');
         $view_page_ad = $this->handleFileUpload($request, 'view_page_ad');
         $news_page_ad = $this->handleFileUpload($request, 'news_page_ad');
         $side_bar_ad = $this->handleFileUpload($request, 'side_bar_ad');
-        $ad = Ad::first();
-
-        Ad::updateOrCreate(
+        $ad = Advertisement::first();
+        Advertisement::updateOrCreate(
             ['id' => $id],
             [
                 'home_top_bar_ad' => !empty($home_top_bar_ad) ? $home_top_bar_ad : $ad->home_top_bar_ad,
@@ -50,12 +60,8 @@ class AdvertisementController extends Controller
                 'view_page_ad_url' => $request->view_page_ad_url,
                 'news_page_ad_url' => $request->news_page_ad_url,
                 'side_bar_ad_url' => $request->side_bar_ad_url,
-
             ]
         );
-
-        toast(__('admin.Updated Successfully'), 'success');
-
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Updated Successfully!');
     }
 }

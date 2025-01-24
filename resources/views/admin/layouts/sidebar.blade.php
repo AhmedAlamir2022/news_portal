@@ -49,40 +49,33 @@
                 </ul>
             </li>
 
-            {{--  @if (canAccess(['social count index']))
-                <li class="{{ setSidebarActive(['admin.social-count.*']) }}"><a class="nav-link"
-                        href="{{ route('admin.social-count.index') }}"><i class="fas fa-hashtag"></i>
-                        <span>{{ __('admin.Social Count') }}</span></a></li>
-            @endif
+            <li class="{{ setSidebarActive(['admin.social-count.*']) }}"><a class="nav-link"
+                    href="{{ route('admin.social-count.index') }}"><i class="fas fa-hashtag"></i>
+                    <span>Social Count</span></a></li>
 
-            @if (canAccess(['contact message index']))
-                <li class="{{ setSidebarActive(['admin.contact-message.*']) }}"><a class="nav-link"
-                        href="{{ route('admin.contact-message.index') }}"><i class="fas fa-id-card-alt"></i>
-                        <span>{{ __('admin.Contact Messages') }} </span>
-                        @if ($unReadMessages > 0)
-                            <i class="badge bg-danger" style="color:
-            #fff">{{ $unReadMessages }}</i>
-                        @endif
-                    </a></li>
-            @endif
-            @if (canAccess(['home section index']))
+            <li class="{{ setSidebarActive(['admin.contact-message.*']) }}"><a class="nav-link"
+                    href="{{ route('admin.contact-message.index') }}"><i class="fas fa-id-card-alt"></i>
+                    <span>Contact Messages </span>
+
+                </a></li>
+            {{-- @if (canAccess(['home section index']))
                 <li class="{{ setSidebarActive(['admin.home-section-setting.*']) }}"><a class="nav-link"
                         href="{{ route('admin.home-section-setting.index') }}"><i class="fas fa-wrench"></i>
                         <span>{{ __('admin.Home Section Setting') }}</span></a></li>
             @endif --}}
 
 
-                <li class="{{ setSidebarActive(['admin.ad.*']) }}"><a class="nav-link"
-                        href="{{ route('admin.advertisement.index') }}"><i class="fas fa-ad"></i>
-                        <span>Advertisement</span></a></li>
+            <li class="{{ setSidebarActive(['admin.advertisement.*']) }}"><a class="nav-link"
+                    href="{{ route('admin.advertisement.index') }}"><i class="fas fa-ad"></i>
+                    <span>Advertisement</span></a></li>
 
 
 
-        {{--    @if (canAccess(['subscribers index']))
-                <li class="{{ setSidebarActive(['admin.subscribers.*']) }}"><a class="nav-link"
-                        href="{{ route('admin.subscribers.index') }}"><i class="fas fa-users"></i>
-                        <span>{{ __('admin.Subscribers') }}</span></a></li>
-            @endif --}}
+
+            <li class="{{ setSidebarActive(['admin.subscribers.*']) }}"><a class="nav-link"
+                    href="{{ route('admin.subscribers.index') }}"><i class="fas fa-users"></i>
+                    <span>Subscribers</span></a></li>
+
 
 
             <li
@@ -134,15 +127,15 @@
                                 href="{{ route('admin.role.index') }}">{{ __('admin.Roles and Permissions') }}</a></li>
                     </ul>
                 </li>
-            @endif
+            @endif --}}
 
-            @if (canAccess(['setting index']))
-                <li class="{{ setSidebarActive(['admin.setting.*']) }}"><a class="nav-link"
-                        href="{{ route('admin.setting.index') }}"><i class="fas fa-cog"></i>
-                        <span>{{ __('admin.Settings') }}</span></a></li>
-            @endif
 
-            @if (canAccess(['languages index']))
+            <li class="{{ setSidebarActive(['admin.setting.*']) }}"><a class="nav-link"
+                    href="{{ route('admin.setting.index') }}"><i class="fas fa-cog"></i>
+                    <span>Settings</span></a></li>
+
+
+            {{--   @if (canAccess(['languages index']))
 
             <li class="dropdown
                 {{ setSidebarActive([
