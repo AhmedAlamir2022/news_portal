@@ -58,11 +58,11 @@
                     <span>Contact Messages </span>
 
                 </a></li>
-            {{-- @if (canAccess(['home section index']))
-                <li class="{{ setSidebarActive(['admin.home-section-setting.*']) }}"><a class="nav-link"
-                        href="{{ route('admin.home-section-setting.index') }}"><i class="fas fa-wrench"></i>
-                        <span>{{ __('admin.Home Section Setting') }}</span></a></li>
-            @endif --}}
+
+            <li class="{{ setSidebarActive(['admin.home-section-setting.*']) }}"><a class="nav-link"
+                    href="{{ route('admin.home-section-setting.index') }}"><i class="fas fa-wrench"></i>
+                    <span>Home Section Setting</span></a></li>
+
 
 
             <li class="{{ setSidebarActive(['admin.advertisement.*']) }}"><a class="nav-link"
